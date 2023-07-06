@@ -1,5 +1,5 @@
 {
-    "name": "llt-plugindev-lytix/moodle-lytix_logs",
+    "name": "llttugraz/moodle-lytix_logs",
     "description": "Logs the interactions with the widgets.",
     "keywords": [
         "moodle",
@@ -18,6 +18,6 @@
     ],
     "require": {
         "moodle/moodle": "3.11 - 4.1",
-        "llt-plugindev/moodle-local_lytix": "*"
+        "llttugraz/moodle-local_lytix": "*"
     }
 }
