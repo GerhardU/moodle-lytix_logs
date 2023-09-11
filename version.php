@@ -24,9 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2022112200; // The current plugin version (Date: YYYYMMDDXX).
-$plugin->requires = 2021051700; // Requires this Moodle version 3.11.
+$plugin->version   = 2023091100; // The current plugin version (Date: YYYYMMDDXX).
+$plugin->requires  = 2021051700; // Requires this Moodle version 3.11.
 $plugin->component = 'lytix_logs'; // Full name of the plugin.
 $plugin->release   = 'v1.0.3';
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->supported = [311, 401];
+$plugin->supported = [401, 401];

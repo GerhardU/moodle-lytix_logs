@@ -34,7 +34,7 @@ function xmldb_lytix_logs_upgrade($oldversion) {
     global $DB;
     $dbman = $DB->get_manager();
 
-    if ($oldversion < 2022112200) {
+    if ($oldversion < 2023091100) {
 
         // Define field widget to be added to lytix_logs_logs.
         $table = new xmldb_table('lytix_logs_logs');
@@ -53,7 +53,7 @@ function xmldb_lytix_logs_upgrade($oldversion) {
         }
 
         // Logs savepoint reached.
-        upgrade_plugin_savepoint(true, 2022112200, 'lytix', 'logs');
+        upgrade_plugin_savepoint(true, 2023091100, 'lytix', 'logs');
     }
 
     return true;
