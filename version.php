@@ -17,16 +17,18 @@
 /**
  * Plugin version info
  * @package    lytix_logs
- * @copyright  2020 Educational Technologies, Graz, University of Technology
+ * @author     Guenther Moser <moser@tugraz.at>
+ * @copyright  2023 Educational Technologies, Graz, University of Technology
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2023091100; // The current plugin version (Date: YYYYMMDDXX).
-$plugin->requires  = 2021051700; // Requires this Moodle version 3.11.
+$plugin->version   = 2023100300; // The current plugin version (Date: YYYYMMDDXX).
+$plugin->maturity  = MATURITY_STABLE;
+$plugin->requires = 2022112800.00; // Requires this Moodle version 4.1.
 $plugin->component = 'lytix_logs'; // Full name of the plugin.
-$plugin->release   = 'v1.0.4';
+$plugin->release   = 'v1.0.5';
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->supported = [401, 401];
