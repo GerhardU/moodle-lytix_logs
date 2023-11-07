@@ -20,7 +20,7 @@
  * @package    lytix_logs
  * @category   test
  * @author     Guenther Moser
- * @copyright  2020 Educational Technologies, Graz, University of Technology
+ * @copyright  2023 Educational Technologies, Graz, University of Technology
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -29,7 +29,6 @@ namespace lytix_logs;
 use advanced_testcase;
 use dml_exception;
 use \lytix_logs\logger;
-use local_lytix\helper\tests;
 
 /**
  * Class logger_test
