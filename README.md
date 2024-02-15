@@ -79,18 +79,12 @@ Detail what personal data the plugin stores and how it handles this data.
 - Issue 1: Solution or workaround for the issue.
 - Issue 2: Solution or workaround for the issue.
 
-## Changelog
-
-### Version v1.0.7
-
-- Release for Moodle 4.2 and 4.3.
-
 ## License
 
-This plugin is licensed under the [GNU GPL v3](LINK_TO_LICENSE).
+This plugin is licensed under the [GNU GPL v3](https://github.com/llttugraz/moodle-lytix_logs?tab=GPL-3.0-1-ov-file).
 
 ## Contributors
 
-- **Günther Moser** - Developer - [GitHub](LINK_TO_GITHUB_PROFILE)
-- **Alex Kremser** - Developer - [GitHub](LINK_TO_GITHUB_PROFILE)
+- **Günther Moser** - Developer - [GitHub](https://github.com/ghinta)
+- **Alex Kremser** - Developer - [GitHub](https://github.com/llt-tuggy)
 
