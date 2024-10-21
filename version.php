@@ -31,4 +31,4 @@ $plugin->requires  = 2022112800.00; // Requires this Moodle version 4.1.
 $plugin->component = 'lytix_logs'; // Full name of the plugin.
 $plugin->release   = 'v1.0.7';
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->supported = [401, 403];
+$plugin->supported = [401, 405];
