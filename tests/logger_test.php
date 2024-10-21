@@ -28,18 +28,19 @@ namespace lytix_logs;
 
 use advanced_testcase;
 use dml_exception;
-use \lytix_logs\logger;
+use lytix_logs\logger;
 
 /**
  * Class logger_test
  * @coversDefaultClass \lytix_logs\logger
  */
-class logger_test extends advanced_testcase {
+final class logger_test extends advanced_testcase {
     /**
      * Setup called before any test case.
      */
     protected function setUp(): void {
         global $DB, $CFG;
+        parent::setUp();
 
         // Create test teacher.
         if (!$DB->record_exists('user', ['username' => 'testteacher'])) {
@@ -71,7 +72,7 @@ class logger_test extends advanced_testcase {
         }
 
         // Create test course.
-        if (!$DB->record_exists('course', array('shortname' => 'testcourse'))) {
+        if (!$DB->record_exists('course', ['shortname' => 'testcourse'])) {
             $course            = new \stdClass();
             $course->fullname  = 'Test Course';
             $course->shortname = 'testcourse';
@@ -102,7 +103,7 @@ class logger_test extends advanced_testcase {
      * @covers ::add
      * @throws dml_exception
      */
-    public function test_log_add() {
+    public function test_log_add(): void {
         $this->resetAfterTest(true);
 
         global $DB;
@@ -128,7 +129,7 @@ class logger_test extends advanced_testcase {
      * @covers ::add
      * @throws dml_exception
      */
-    public function test_log_edit() {
+    public function test_log_edit(): void {
         $this->resetAfterTest(true);
 
         global $DB;
@@ -154,7 +155,7 @@ class logger_test extends advanced_testcase {
      * @covers ::add
      * @throws dml_exception
      */
-    public function test_log_delete() {
+    public function test_log_delete(): void {
         $this->resetAfterTest(true);
 
         global $DB;
@@ -180,7 +181,7 @@ class logger_test extends advanced_testcase {
      * @covers ::get_user_context_logs
      * @throws dml_exception
      */
-    public function test_log_open() {
+    public function test_log_open(): void {
         $this->resetAfterTest(true);
 
         global $DB;
@@ -206,7 +207,7 @@ class logger_test extends advanced_testcase {
      * @covers ::add
      * @throws dml_exception
      */
-    public function test_log_close() {
+    public function test_log_close(): void {
         $this->resetAfterTest(true);
 
         global $DB;
@@ -232,7 +233,7 @@ class logger_test extends advanced_testcase {
      * @covers ::add
      * @throws dml_exception
      */
-    public function test_log_all() {
+    public function test_log_all(): void {
         $this->resetAfterTest(true);
 
         global $DB;
@@ -270,7 +271,7 @@ class logger_test extends advanced_testcase {
      * @covers ::add
      * @throws dml_exception
      */
-    public function test_log_diff_target() {
+    public function test_log_diff_target(): void {
         $this->resetAfterTest(true);
 
         global $DB;
@@ -304,7 +305,7 @@ class logger_test extends advanced_testcase {
      * @covers ::add
      * @throws dml_exception
      */
-    public function test_log_diff_courses() {
+    public function test_log_diff_courses(): void {
         $this->resetAfterTest(true);
 
         global $DB;
