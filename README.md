@@ -24,10 +24,41 @@ The `lytix_logs` module plays a crucial role in capturing user interactions with
 - Incorporates an essential database table:
   - `lytix logs logs`: Records actions associated with the custom dashboard.
 
+## Configuration
+
+No settings for the subplugin are available.
+
+## Usage
+
+This module provides only backend functionalities.
+
+## API Documentation
+
+No API.
+
+## Privacy
+
+The following personal data of each user are stored during the use of the functionality of the plugin LYTIX (and its subplugins):
+
+| Entry         | Description                                                                    |
+|---------------|--------------------------------------------------------------------------------|
+| userid        | The ID of the user                                                             |
+| courseid      | The ID of the corresponding course                                             |
+| contextid     | The ID of the corresponding context                                            |
+| widget        | The type of the widget                                                         |
+| target        | The corresponding widget target                                                |
+| targetid      | The ID of the  target                                                          |
+| timestamp     | The corresponding timestamp                                                    |
+| meta          | Optional: Meta information of the widget if available                          |
+
+## Known Issues
+
+There are no known issues related to this plugin.
+
+
 ## Dependencies
 
-- [local_lytix](https://github.com/llttugraz/moodle-local_lytix).
-- [lytix_config](https://github.com/llttugraz/moodle-lytix_config).
+- [local_lytix](https://github.com/llttugraz/moodle-local_lytix)
 
 ## License
 
