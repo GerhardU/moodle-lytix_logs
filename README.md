@@ -12,10 +12,13 @@ The `lytix_logs` module plays a crucial role in capturing user interactions with
 
 ## Requirements
 
-- Moodle Version: 4.1+
-- PHP Version: 7.4+
-- Supported Databases: MariaDB, PostgreSQL
-- Supported Moodle Themes: Boost
+- Supported Moodle Version: 4.1 - 4.5
+- Supported PHP Version:    7.4 - 8.3
+- Supported Databases:      MariaDB, PostgreSQL
+- Supported Moodle Themes:  Boost
+
+This plugin has only been tested under the above system requirements against the specified versions.
+However, it may work under other system requirements and versions as well.
 
 ## Features
 
