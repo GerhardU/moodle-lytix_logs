@@ -121,6 +121,15 @@ final class logger_test extends advanced_testcase {
         logger::add($student->id, $course->id, $context->id, logger::TYPE_ADD, logger::TYPE_MILESTONE, 1);
         $logs = logger::get_user_context_logs($teacher->id, $context->id);
         $this->assertEquals(1, count($logs), 'There should be exactly one log for this user');
+
+        // Update 2024-11-05: This test is extended for cleanup (implemented in local_lytix).
+        set_config('course_list', $course->id, 'local_lytix');
+        $DB->insert_record('lytix_logs_aggregated_logs', ['courseid' => $course->id, 'userid' => $student->id,
+                'contextid' => 1, 'target' => "1", 'duration' => 1, 'day' => 1]);
+        $this->assertEquals(2, $DB->count_records('lytix_logs_logs', ['courseid' => $course->id]));
+        delete_course($course->id, false);
+        $this->assertEquals(0, $DB->count_records('lytix_logs_logs', ['courseid' => $course->id]));
+        $this->assertEquals(0, $DB->count_records('lytix_logs_aggregated_logs', ['courseid' => $course->id]));
     }
 
     /**
