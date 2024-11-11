@@ -13,6 +13,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 /**
  * Upgrade changes between versions
  *
@@ -54,6 +55,28 @@ function xmldb_lytix_logs_upgrade($oldversion) {
 
         // Logs savepoint reached.
         upgrade_plugin_savepoint(true, 2023091100, 'lytix', 'logs');
+    }
+
+    if ($oldversion < 2024111100) {
+        global $DB;
+        // Delete deleted users from table 'lytix_logs_logs'.
+        $DB->delete_records_select('lytix_logs_logs',
+                'userid IN (SELECT id FROM  {user} WHERE deleted = 1)');
+
+        // Delete non-existing courses from table 'lytix_logs_logs'.
+        $DB->delete_records_select('lytix_logs_logs',
+                'courseid NOT IN (SELECT id FROM  {course})');
+
+        // Delete deleted users from table 'lytix_logs_aggregated_logs'.
+        $DB->delete_records_select('lytix_logs_aggregated_logs',
+                'userid IN (SELECT id FROM  {user} WHERE deleted = 1)');
+
+        // Delete non-existing courses from table 'lytix_logs_aggregated_logs'.
+        $DB->delete_records_select('lytix_logs_aggregated_logs',
+                'courseid NOT IN (SELECT id FROM  {course})');
+
+        // Coursepolicy savepoint reached.
+        upgrade_plugin_savepoint(true, 2024111100, 'lytix', 'logs');
     }
 
     return true;

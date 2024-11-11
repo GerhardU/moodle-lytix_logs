@@ -36,12 +36,13 @@ use dml_exception;
  * Class privacy_lib_test
  * @coversDefaultClass \lytix_logs\privacy\provider
  */
-class provider_test extends provider_testcase {
+final class provider_test extends provider_testcase {
 
     /**
      * Basic setup for these tests.
      */
     public function setUp(): void {
+        parent::setUp();
         $this->resetAfterTest(true);
     }
 
@@ -82,7 +83,7 @@ class provider_test extends provider_testcase {
      * @covers ::get_contexts_for_userid
      *
      */
-    public function test_get_contexts_for_userid() {
+    public function test_get_contexts_for_userid(): void {
         $user = $this->getDataGenerator()->create_user();
         $contextlist = privacy\provider::get_contexts_for_userid($user->id);
         $this->assertEmpty($contextlist);
@@ -95,7 +96,7 @@ class provider_test extends provider_testcase {
      *
      * @return void
      */
-    public function test_get_users_in_context_non_user_context() {
+    public function test_get_users_in_context_non_user_context(): void {
         $context = \context_system::instance();
 
         $userlist = new userlist($context, 'lyitx_logs');
@@ -114,7 +115,7 @@ class provider_test extends provider_testcase {
      * @return void
      * @throws \dml_exception
      **/
-    public function test_delete_user_data() {
+    public function test_delete_user_data(): void {
         $course = $this->getDataGenerator()->create_course();
         $user = $this->getDataGenerator()->create_user();
         $this->getDataGenerator()->enrol_user($user->id, $course->id, 'student');
@@ -134,7 +135,7 @@ class provider_test extends provider_testcase {
      * @return void
      * @throws \dml_exception
      */
-    public function test_delte_user_over_contextlist() {
+    public function test_delte_user_over_contextlist(): void {
         $course = $this->getDataGenerator()->create_course();
         $user = $this->getDataGenerator()->create_user();
         $this->getDataGenerator()->enrol_user($user->id, $course->id);
@@ -152,7 +153,7 @@ class provider_test extends provider_testcase {
      * @return void
      * @throws \dml_exception
      */
-    public function test_erase_users_data() {
+    public function test_erase_users_data(): void {
         $course = $this->getDataGenerator()->create_course();
         $user1 = $this->getDataGenerator()->create_user();
         $user2 = $this->getDataGenerator()->create_user();
@@ -175,7 +176,7 @@ class provider_test extends provider_testcase {
      * @return void
      * @throws \dml_exception
      */
-    public function test_metadata() {
+    public function test_metadata(): void {
         $course = $this->getDataGenerator()->create_course();
         $user = $this->getDataGenerator()->create_user();
         $this->getDataGenerator()->enrol_user($user->id, $course->id);
@@ -193,7 +194,7 @@ class provider_test extends provider_testcase {
      * @return void
      * @throws \dml_exception
      */
-    public function test_export_user_over_contextlist() {
+    public function test_export_user_over_contextlist(): void {
         $course = $this->getDataGenerator()->create_course();
         $user = $this->getDataGenerator()->create_user();
         $this->getDataGenerator()->enrol_user($user->id, $course->id);
@@ -211,7 +212,7 @@ class provider_test extends provider_testcase {
      * @throws coding_exception
      * @throws dml_exception
      */
-    public static function privacy_delte_users_sub_test(\stdClass $user) : bool {
+    public static function privacy_delte_users_sub_test(\stdClass $user): bool {
         global $DB;
         $privacy = new privacy\provider();
         $context = new contextlist();
@@ -232,7 +233,7 @@ class provider_test extends provider_testcase {
      * @throws coding_exception
      * @throws dml_exception
      */
-    public static function privacy_get_users_sub_test(\stdClass $user) : bool {
+    public static function privacy_get_users_sub_test(\stdClass $user): bool {
         $privacy = new privacy\provider();
         $context = new contextlist();
         $context->add_system_context();
@@ -247,7 +248,7 @@ class provider_test extends provider_testcase {
      * @param \stdClass $context
      * @return bool
      */
-    public static function privacy_get_context_sub_test(\stdClass $user, \stdClass $context) : bool {
+    public static function privacy_get_context_sub_test(\stdClass $user, \stdClass $context): bool {
         // Contextid by parameter because we need the context of the course.
         $privacy = new privacy\provider();
         $contexts = array_flip($privacy::get_contexts_for_userid($user->id)->get_contextids());
@@ -261,7 +262,7 @@ class provider_test extends provider_testcase {
      * @throws coding_exception
      * @throws dml_exception
      */
-    public static function privacy_delete_context_sub_test() : bool {
+    public static function privacy_delete_context_sub_test(): bool {
         global $DB;
         $privacy = new privacy\provider();
         $privacy::delete_data_for_all_users_in_context(\context_system::instance());
@@ -276,7 +277,7 @@ class provider_test extends provider_testcase {
      * @param string $component
      * @return bool
      */
-    public static function privacy_get_metadata_sub_test(string $component) : bool {
+    public static function privacy_get_metadata_sub_test(string $component): bool {
         $collection = new collection($component);
         $privacy = new privacy\provider();
         $collection = $privacy::get_metadata($collection);
@@ -294,7 +295,7 @@ class provider_test extends provider_testcase {
      * @throws coding_exception
      * @throws dml_exception
      */
-    public static function privacy_delete_context_user_sub_test(\stdClass $user, string $component) : bool {
+    public static function privacy_delete_context_user_sub_test(\stdClass $user, string $component): bool {
         global $DB;
         $privacy = new privacy\provider();
         $component = "{".$component."}";

@@ -24,26 +24,24 @@
  */
 
 $string['pluginname'] = 'Lytix Logs';
-
-// Privacy.
+$string['privacy:metadata:lytix_logs_aggregated_logs'] = "In order to track all activities of the users , we\
+ need to save some user related data";
+$string['privacy:metadata:lytix_logs_aggregated_logs:contextid'] = "Contextid";
+$string['privacy:metadata:lytix_logs_aggregated_logs:courseid'] = "The course ID will be saved for knowing to which \course
+ the data belongs to";
+$string['privacy:metadata:lytix_logs_aggregated_logs:day'] = "Day";
+$string['privacy:metadata:lytix_logs_aggregated_logs:duration'] = "Duration";
+$string['privacy:metadata:lytix_logs_aggregated_logs:target'] = "Target";
+$string['privacy:metadata:lytix_logs_aggregated_logs:userid'] = "The user ID will be saved for uniquely identifying the user";
 $string['privacy:metadata:lytix_logs_logs'] = "In order to track all activities of the users , we\
  need to save some user related data";
-$string['privacy:metadata:lytix_logs_logs:userid'] = "The user ID will be saved for uniquely identifying the user";
+$string['privacy:metadata:lytix_logs_logs:contextid'] = "Contextid";
 $string['privacy:metadata:lytix_logs_logs:courseid'] = "The course ID will be saved for knowing to which \course
  the data belongs to";
-$string['privacy:metadata:lytix_logs_logs:contextid'] = "Contextid";
-$string['privacy:metadata:lytix_logs_logs:type'] = "Type";
+$string['privacy:metadata:lytix_logs_logs:meta'] = "Meta";
 $string['privacy:metadata:lytix_logs_logs:target'] = "Target";
 $string['privacy:metadata:lytix_logs_logs:targetid'] = "Targetit";
 $string['privacy:metadata:lytix_logs_logs:timestamp'] = "Timestamp";
+$string['privacy:metadata:lytix_logs_logs:type'] = "Type";
+$string['privacy:metadata:lytix_logs_logs:userid'] = "The user ID will be saved for uniquely identifying the user";
 $string['privacy:metadata:lytix_logs_logs:widget'] = "Widget";
-$string['privacy:metadata:lytix_logs_logs:meta'] = "Meta";
-$string['privacy:metadata:lytix_logs_aggregated_logs'] = "In order to track all activities of the users , we\
- need to save some user related data";
-$string['privacy:metadata:lytix_logs_aggregated_logs:userid'] = "The user ID will be saved for uniquely identifying the user";
-$string['privacy:metadata:lytix_logs_aggregated_logs:courseid'] = "The course ID will be saved for knowing to which \course
- the data belongs to";
-$string['privacy:metadata:lytix_logs_aggregated_logs:contextid'] = "Contextid";
-$string['privacy:metadata:lytix_logs_aggregated_logs:target'] = "Target";
-$string['privacy:metadata:lytix_logs_aggregated_logs:duration'] = "Duration";
-$string['privacy:metadata:lytix_logs_aggregated_logs:day'] = "Day";

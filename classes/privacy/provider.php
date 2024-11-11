@@ -13,6 +13,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 /**
  * Choose and download exam backups
  *
@@ -29,7 +30,7 @@ use core_privacy\local\request\approved_userlist;
 use core_privacy\local\request\contextlist;
 use core_privacy\local\request\userlist;
 use core_privacy\tests\request\content_writer;
-use \core_privacy\local\request\writer;
+use core_privacy\local\request\writer;
 
 
 /**
@@ -47,7 +48,7 @@ class provider implements
      * @param collection $collection empty collection of tables for column translation
      * @return  collection the translated userdata
      */
-    public static function get_metadata(collection $collection) : collection {
+    public static function get_metadata(collection $collection): collection {
 
         $collection->add_database_table("lytix_logs_logs",
             [
@@ -59,7 +60,7 @@ class provider implements
                 "targetid" => "privacy:metadata:lytix_logs_logs:targetid",
                 "timestamp" => "privacy:metadata:lytix_logs_logs:timestamp",
                 "widget" => "privacy:metadata:lytix_logs_logs:widget",
-                "meta" => "privacy:metadata:lytix_logs_logs:meta"
+                "meta" => "privacy:metadata:lytix_logs_logs:meta",
             ], "privacy:metadata:lytix_logs_logs"
         );
 
@@ -70,7 +71,7 @@ class provider implements
                 "contextid" => "privacy:metadata:lytix_logs_aggregated_logs:contextid",
                 "target" => "privacy:metadata:lytix_logs_aggregated_logs:target",
                 "duration" => "privacy:metadata:lytix_logs_aggregated_logs:duration",
-                "day" => "privacy:metadata:lytix_logs_aggregated_logs:day"
+                "day" => "privacy:metadata:lytix_logs_aggregated_logs:day",
             ], "privacy:metadata:lytix_logs_aggregated_logs"
         );
 
@@ -144,7 +145,7 @@ class provider implements
         // This CONTEXT_SYSTEM could be $userlist->contextid.
         $params = [
             "contextlevel" => CONTEXT_COURSE,
-            "userid" => $contextlist->get_user()->id
+            "userid" => $contextlist->get_user()->id,
         ];
         $dataset = $DB->get_records_sql($courseids, $params);
 
@@ -178,13 +179,13 @@ class provider implements
 
         $params = [
             "contextlevel" => CONTEXT_SYSTEM,
-            "userid" => $userid
+            "userid" => $userid,
         ];
         $contextlist->add_from_sql($roleassignments, $params);
 
         $params = [
             "contextlevel" => CONTEXT_COURSE,
-            "userid" => $userid
+            "userid" => $userid,
         ];
         $contextlist->add_from_sql($roleassignments, $params);
 
